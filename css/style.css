@@ -1,0 +1,178 @@
+/* ================================
+FONTS
+================================ */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-VariableFont_slnt_wght.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+/* ================================
+   RESET
+================================ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+ul,
+li{
+	list-style: none;
+}
+
+/* ================================
+   VARIABLES
+================================ */
+:root {
+  /* Spaces */
+  --space-xs: 0.25rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Colors */
+  --color-primary: hsla(0, 0%, 100%);
+  --color-gray-900: hsla(0, 0%, 8%);
+  --color-gray-800: hsla(0, 0%, 12%);
+  --color-gray-700: hsla(0, 0%, 20%);
+  --color-green: hsla(75, 94%, 57%);
+
+  /* Typography */
+  --ff-primary: "Inter", sans-serif;
+  --fz-primary: 0.875rem;
+  --lh-primary: 1.5;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-400: 400;
+
+  /*Border & Outline*/
+  --card-border-r: 0.75rem;
+  --link-border-r: 0.5rem;
+
+  /* Effects */
+  --transition: 0.2s;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+body {
+  font-size: var(--fz-primary);
+  font-family: var(--ff-primary);
+  color: var(--color-primary);
+  line-height: var(--lh-primary);
+  font-weight: var(--fw-700);
+  background-color: var(--color-gray-900);
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  min-block-size: 100svh;
+}
+
+/* ================================
+   COMPONENTS
+================================ */
+.title {
+  --fz-title: 1.5rem;
+  font-size: var(--fz-title);
+  font-weight: var(--fw-600);
+}
+
+/* ================================
+   MAIN CARD
+================================ */
+.profile {
+  --border-r-avatar: 50%;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  max-inline-size: min(85vw, 24rem);
+  text-align: center;
+  row-gap: var(--space-lg);
+  padding: clamp(var(--space-lg), 1.148rem + 1.502vw, var(--space-xl));
+  background-color: var(--color-gray-800);
+  border-radius: var(--card-border-r);
+}
+
+.profile__avatar {
+  overflow: hidden;
+  align-self: center;
+  inline-size: 5.5rem;
+  aspect-ratio: 1;
+  border-radius: var(--border-r-avatar);
+}
+
+.profile__avatar img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.profile__caption .title:not(:last-child) {
+  margin-block-end: var(--space-xs);
+}
+
+.profile__location {
+  color: var(--color-green);
+}
+
+.profile__label {
+  font-weight: var(--fw-400);
+}
+
+.profile__label::before,
+.profile__label::after {
+  content: '"';
+}
+.profile__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-md);
+}
+
+.profile__link {
+  display: grid;
+  padding: var(--space-sm);
+  background-color: var(--color-gray-700);
+  border-radius: var(--link-border-r);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+@media (any-hover: hover), (pointer: fine) {
+  .profile__link:hover {
+    background-color: var(--color-green);
+    color: var(--color-gray-700);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile__link:hover {
+    transition: none;
+  }
+}

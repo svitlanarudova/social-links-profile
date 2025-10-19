@@ -2,9 +2,11 @@
 
 # Frontend Mentor - Social Links Profile
 
-![Design preview for the Blog preview card coding challenge](./preview.jpg)
+![Design preview for the Social links profile coding challenge](./preview.jpg)
 
 ## Project Overview 📋 
+
+This is a solution to the [Social links profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ).
 
 This is my solution to the Social Links Profile challenge on Frontend Mentor.
 The goal was to build a responsive component that matches the provided design as closely as possible, working well on both mobile and desktop devices.
